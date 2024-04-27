@@ -1,0 +1,11 @@
+import './user'
+import './space'
+import '../schema'
+
+model Membership {
+    id      Int   @id @default(autoincrement())
+    userId  Int
+    user    User  @relation(fields: [userId], references: [id])
+    spaceId Int
+    space   Space @relation(fields: [spaceId], references: [id])
+}

@@ -1,0 +1,10 @@
+import './space'
+import './membership'
+import '../schema'
+
+model User {
+    id          Int          @id @default(autoincrement())
+    spaces      Space[]
+    memberships Membership[]
+    posts       Post[]
+}
